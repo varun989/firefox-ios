@@ -493,6 +493,9 @@ class TabManager: NSObject {
                 removeTabAndUpdateSelectedIndex(removed)
             } else {
                 removeTabs(tabsCopy)
+                if normalTabs.isEmpty {
+                    selectTab(addTab())
+                }
             }
         }
         for tab in tabs {
